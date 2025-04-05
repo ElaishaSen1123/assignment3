@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hover Reveal Speakers</title>
+
+  <!-- Okay, adding some basic styles so it looks clean -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #111; /* I chose a dark background to make the boxes pop */
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 40px auto; /* this centers the content */
+      display: flex;
+      flex-direction: column;
+      gap: 40px; /* space between each speaker */
+    }
+
+    .speaker-box {
+      background-color: #222; /* darker box inside the dark background */
+      padding: 20px;
+      border-radius: 10px;
+      opacity: 0; /* start hidden */
+      transition: opacity 0.5s ease; /* smooth fade-in */
+      pointer-events: none; /* don't let mouse click when hidden */
+    }
+
+    .speaker-wrapper {
+      position: relative;
+    }
+
+    .speaker-wrapper:hover .speaker-box {
+      opacity: 1; /* when I hover, it fades in */
+      pointer-events: auto;
+    }
+
+    .speaker-box h2 {
+      color: #ffcc00; /* I picked yellow to stand out */
+      margin-top: 0;
+    }
+
+    .speaker-box h4 {
+      font-weight: normal;
+      color: #ccc; /* softer gray */
+    }
+
+    .speaker-image {
+      width: 100%; /* full width of box */
+      max-height: 300px;
+      object-fit: cover; /* make sure image fits nicely */
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .speaker-box p {
+      line-height: 1.6; /* better spacing for reading */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Speaker 1 - I’m starting with Dr. Cambre’s section -->
+    <div class="speaker-wrapper">
+      <div class="speaker-box">
+        <h2>Dr. Maria-Carolina Cambre</h2>
+        <h4>Associate Professor, Concordia University, Montreal CA</h4>
+
+        <!-- added the image from my folder -->
+        <img src="images/Picture2.png" alt="Dr. Cambre" class="speaker-image">
+
+        <p><strong>Lecture Date:</strong> Tuesday, January 28th, 2025 at 9:00 am EST</p>
+        <p><strong>Lecture:</strong> <em>Contesting the colonial eye: “Burning the Mona Lisa”</em></p>
+        <p>This workshop/discussion will present ideas to work through and think about everyday resistant or subversive interactions...</p>
+        <p><strong>Bio:</strong> Cambre is an Argentine/Canadian scholar who explores vernacular visual expression...</p>
+      </div>
+    </div>
+
+    <!-- Speaker 2 - Now adding Dr. Machado -->
+    <div class="speaker-wrapper">
+      <div class="speaker-box">
+        <h2>Dr. Isabel Machado</h2>
+        <h4>Lecturer, University of British Columbia</h4>
+
+        <!-- using picture3 from my images folder -->
+        <img src="images/Picture3.png" alt="Dr. Machado" class="speaker-image">
+
+        <p><strong>Lecture Date:</strong> Wednesday, February 5th at 1:00 pm EST</p>
+        <p><strong>Lecture:</strong> <em>Fostering Inclusive Communities in the Classroom...</em></p>
+        <p>Isabel Machado will discuss the challenges and positive results of building inclusive classroom communities...</p>
+        <p><strong>Bio:</strong> Isabel Machado is a Brazilian cultural historian whose work crosses national boundaries...</p>
+      </div>
+    </div>
+
+    <!-- Speaker 3 - Daniel Wildberger’s turn -->
+    <div class="speaker-wrapper">
+      <div class="speaker-box">
+        <h2>Daniel Wildberger</h2>
+        <h4>Assistant Professor, Emily Carr University of Art and Design</h4>
+
+        <!-- Picture4 goes with Daniel -->
+        <img src="images/Picture4.png" alt="Daniel Wildberger" class="speaker-image">
+
+        <p><strong>Lecture Date:</strong> Wednesday, March 5th at 12:00 pm EST</p>
+        <p><strong>Lecture:</strong> <em>Branches: Weaving Stories in Design and Education</em></p>
+        <p>This presentation is a collaboration between Daniel Wildberger and Erik Páez, sparked by a central question...</p>
+        <p><strong>Bio:</strong> Born in Brazil, Daniel Wildberger is a designer and educator focused on dynamic media and interaction design...</p>
+      </div>
+    </div>
+
+    <!-- Speaker 4 - Last one is Dr. Rashnoodi -->
+    <div class="speaker-wrapper">
+      <div class="speaker-box">
+        <h2>Dr. Shima Rezaei Rashnoodi</h2>
+        <h4>Senior Researcher, Breda University of Applied Sciences</h4>
+
+        <!-- This is Picture5 -->
+        <img src="images/Picture5.png" alt="Dr. Rashnoodi" class="speaker-image">
+
+        <p><strong>Lecture Date:</strong> Wednesday, March 26 at 9:00 am EST</p>
+        <p><strong>Lecture:</strong> <em>Being There: A Virtual Reality Museum of Migrant Women</em></p>
+        <p>This presentation introduces Being There, a virtual reality museum that highlights the stories of migrant women...</p>
+        <p><strong>Bio:</strong> Shima Rezaei Rashnoodi specializes in immersive media and participatory design, with a background in architecture...</p

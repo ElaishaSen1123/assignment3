@@ -14,13 +14,58 @@
       color: white;
     }
 
-    .container {
+    /* message box that appears at the top and fades out */
+    .message-box {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: #fff;
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      z-index: 1000;
+      opacity: 0;
+      animation: fadeInOut 5s ease-in-out forwards;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .intro-wrapper {
       width: 90%;
       max-width: 1000px;
+      margin: 40px auto;
+      position: relative;
+    }
+
+    .intro-box {
+      background-color: #222; /* same style as speaker box */
+      padding: 20px;
+      border-radius: 10px;
+      opacity: 0; /* start hidden */
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    .intro-wrapper:hover .intro-box {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .container {
+      width: 95%;
+      max-width: 1200px; /* widened container */
       margin: 40px auto; /* this centers the content */
-      display: flex;
-      flex-direction: column;
-      gap: 40px; /* space between each speaker */
+      display: grid;
+      grid-template-columns: 1fr 1fr; 
+      gap: 30px; /* reduced gap slightly to give more width to each box */
     }
 
     .speaker-box {
@@ -59,12 +104,36 @@
       margin: 20px 0;
     }
 
-    .speaker-box p {
+    .speaker-box p, .intro-box p {
       line-height: 1.6; /* better spacing for reading */
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr; /* stack on small screens */
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Message box that disappears after 5 seconds -->
+  <div class="message-box">
+    This assignment demonstrates hover-based content reveals.
+  </div>
+
+  <!-- Hover-to-reveal intro content -->
+  <div class="intro-wrapper">
+    <div class="intro-box">
+      <p>The International Programs & Collaborations Office at OCAD University presents <strong>International Lecture Series: Beyond Bias</strong>. This international lecture series brings together academics and researchers from around the world to share their experiences, methodologies, and scholarly approaches to fostering inclusive collaborations across borders. Focusing on the intersection of global education and creative research, the series aims to provide valuable insights on how to collaborate effectively with students and professors from diverse cultural backgrounds.</p>
+
+      <p><em>Beyond Bias Banner</em></p>
+
+      <p>Each lecture will feature expert speakers who will share their personal journeys, research strategies, and academic examples of successful international collaborations. Emphasizing cultural awareness, the series will explore how to navigate biases, promote equity, equality, and social justice, and go beyond preconceptions to build a more inclusive and respectful global creative community.</p>
+
+      <p>This series invites participants to reflect on their own cultural assumptions and gain tools to engage with international colleagues and students in a meaningful, ethical, and thoughtful way. By challenging misconceptions and fostering mutual understanding, we aim to create collaborations that are both globally relevant and locally responsive.</p>
+    </div>
+  </div>
 
   <div class="container">
 
@@ -128,4 +197,11 @@
         <p><strong>Lecture Date:</strong> Wednesday, March 26 at 9:00 am EST</p>
         <p><strong>Lecture:</strong> <em>Being There: A Virtual Reality Museum of Migrant Women</em></p>
         <p>This presentation introduces Being There, a virtual reality museum that highlights the stories of migrant women...</p>
-        <p><strong>Bio:</strong> Shima Rezaei Rashnoodi specializes in immersive media and participatory design, with a background in architecture...</p
+        <p><strong>Bio:</strong> Shima Rezaei Rashnoodi specializes in immersive media and participatory design, with a background in architecture...</p> <!-- make it so all 4 sections are in a quadrant, also above all the 4 quadrants could you add these paragraphs? -->
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
